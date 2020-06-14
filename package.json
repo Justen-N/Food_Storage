@@ -1,0 +1,19 @@
+{
+  "name": "storage-inventory",
+  "version": "1.0.0",
+  "description": "A food storage inventory web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Justen-N/Food-Storage.git"
+  },
+  "author": "Justen Neeley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Justen-N/Food-Storage/issues"
+  },
+  "homepage": "https://github.com/Justen-N/Food-Storage#readme"
+}
