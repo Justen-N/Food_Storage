@@ -1,0 +1,84 @@
+
+
+Ingredient
+----------
+has many          ingredient_list                          as ListIngredientIdFkeys 
+belongs to        users                                    as RelatedCreatedBy 
+belongs to        ingredient_type                          as RelatedIngredientType 
+belongs to        users                                    as RelatedLastUpdatedBy 
+belongs to many   users                                    as IngredientListCreatedBies 
+belongs to many   users                                    as IngredientListLastUpdatedBies 
+belongs to many   measurement_type                         as IngredientListMeasurementTypes 
+belongs to many   recipe                                   as IngredientListRecipes 
+
+
+IngredientList
+--------------
+belongs to        users                                    as RelatedCreatedBy 
+belongs to        ingredient                               as Ingredient 
+belongs to        users                                    as RelatedLastUpdatedBy 
+belongs to        measurement_type                         as MeasurementType 
+belongs to        recipe                                   as Recipe 
+
+
+IngredientType
+--------------
+has many          ingredient                               as IngredientIngredientTypeFkeys 
+belongs to        users                                    as RelatedCreatedBy 
+belongs to        users                                    as RelatedLastUpdatedBy 
+belongs to many   users                                    as IngredientCreatedBies 
+belongs to many   users                                    as IngredientLastUpdatedBies 
+
+
+MeasurementType
+---------------
+has many          ingredient_list                          as IngredientListMeasurementTypeIdFkeys 
+belongs to        users                                    as RelatedCreatedBy 
+belongs to        users                                    as RelatedLastUpdatedBy 
+belongs to many   users                                    as IngredientListCreatedBies 
+belongs to many   ingredient                               as IngredientListIngredients 
+belongs to many   users                                    as IngredientListLastUpdatedBies 
+belongs to many   recipe                                   as IngredientListRecipes 
+
+
+Recipe
+------
+has many          ingredient_list                          as IngredientListRecipeIdFkeys 
+belongs to        users                                    as RelatedCreatedBy 
+belongs to        users                                    as RelatedLastUpdatedBy 
+belongs to many   users                                    as IngredientListCreatedBies 
+belongs to many   ingredient                               as IngredientListIngredients 
+belongs to many   users                                    as IngredientListLastUpdatedBies 
+belongs to many   measurement_type                         as IngredientListMeasurementTypes 
+
+
+User
+----
+has many          ingredient                               as IngredientCreatedByFkeys 
+has many          ingredient                               as IngredientLastUpdatedByFkeys 
+has many          ingredient_list                          as IngredientListCreatedByFkeys 
+has many          ingredient_list                          as IngredientListLastUpdatedByFkeys 
+has many          ingredient_type                          as IngredientTypeCreatedByFkeys 
+has many          ingredient_type                          as IngredientTypeLastUpdatedByFkeys 
+has many          measurement_type                         as MeasurementTypeCreatedByFkeys 
+has many          measurement_type                         as MeasurementTypeLastUpdatedByFkeys 
+has many          recipe                                   as RecipeCreatedByFkeys 
+has many          recipe                                   as RecipeLastUpdatedByFkeys 
+belongs to many   ingredient_type                          as IngredientIngredientTypes 
+belongs to many   users                                    as IngredientLastUpdatedBies 
+belongs to many   users                                    as IngredientCreatedBies 
+belongs to many   ingredient_type                          as IngredientIngredientTypes 
+belongs to many   ingredient                               as IngredientListIngredients 
+belongs to many   users                                    as IngredientListLastUpdatedBies 
+belongs to many   measurement_type                         as IngredientListMeasurementTypes 
+belongs to many   recipe                                   as IngredientListRecipes 
+belongs to many   users                                    as IngredientListCreatedBies 
+belongs to many   ingredient                               as IngredientListIngredients 
+belongs to many   measurement_type                         as IngredientListMeasurementTypes 
+belongs to many   recipe                                   as IngredientListRecipes 
+belongs to many   users                                    as IngredientTypeLastUpdatedBies 
+belongs to many   users                                    as IngredientTypeCreatedBies 
+belongs to many   users                                    as MeasurementTypeLastUpdatedBies 
+belongs to many   users                                    as MeasurementTypeCreatedBies 
+belongs to many   users                                    as RecipeLastUpdatedBies 
+belongs to many   users                                    as RecipeCreatedBies 
