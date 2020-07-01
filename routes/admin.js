@@ -4,6 +4,8 @@ const inventoryController = require('../controllers/inventory');
 
 const router = express.Router();
 
-router.get('/add-inventory-item',inventoryController.getAddInventory);
+router.get('/', (req,res,next)=> {
+    res.send("nothing here yet")
+})
 
 module.exports = router;
