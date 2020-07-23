@@ -1,3 +1,5 @@
+const { Sequelize } = require('sequelize');
+
 /* eslint global-require: "off" */
 const model = {};
 let initialized = false;
@@ -11,12 +13,12 @@ function init(sequelize) {
     delete module.exports.init; // Destroy itself to prevent repeated calls and clash with a model named 'init'.
     initialized = true;
     // Import model files and assign them to `model` object.
-    model.Ingredient = sequelize.import('./definition/ingredient.js');
-    model.IngredientList = sequelize.import('./definition/ingredient-list.js');
-    model.IngredientType = sequelize.import('./definition/ingredient-type.js');
-    model.MeasurementType = sequelize.import('./definition/measurement-type.js');
-    model.Recipe = sequelize.import('./definition/recipe.js');
-    model.User = sequelize.import('./definition/users.js');
+    model.Ingredient = require('./definition/ingredient.js')(sequelize,Sequelize);
+    model.IngredientList = require('./definition/ingredient-list.js')(sequelize,Sequelize);
+    model.IngredientType = require('./definition/ingredient-type.js')(sequelize,Sequelize);
+    model.MeasurementType = require('./definition/measurement-type.js')(sequelize,Sequelize);
+    model.Recipe = require('./definition/recipe.js')(sequelize,Sequelize);
+    model.User = require('./definition/users.js')(sequelize,Sequelize);
 
     // All models are initialized. Now connect them with relations.
     require('./definition/ingredient.js').initRelations();

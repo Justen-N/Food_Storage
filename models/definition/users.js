@@ -107,7 +107,7 @@ module.exports.initRelations = () => {
     });
 
     User.belongsToMany(IngredientType, {
-        as: 'IngredientIngredientTypes',
+        as: 'IngredientIngredientTypesCreatedBy',
         through: Ingredient,
         foreignKey: 'created_by',
         otherKey: 'ingredient_type',
@@ -134,7 +134,7 @@ module.exports.initRelations = () => {
     });
 
     User.belongsToMany(IngredientType, {
-        as: 'IngredientIngredientTypes',
+        as: 'IngredientIngredientTypesLastUpdatedBy',
         through: Ingredient,
         foreignKey: 'last_updated_by',
         otherKey: 'ingredient_type',
@@ -143,7 +143,7 @@ module.exports.initRelations = () => {
     });
 
     User.belongsToMany(Ingredient, {
-        as: 'IngredientListIngredients',
+        as: 'IngredientListIngredientsCreatedBy',
         through: IngredientList,
         foreignKey: 'created_by',
         otherKey: 'ingredient_id',
@@ -170,7 +170,7 @@ module.exports.initRelations = () => {
     });
 
     User.belongsToMany(Recipe, {
-        as: 'IngredientListRecipes',
+        as: 'IngredientListRecipesCreatedBy',
         through: IngredientList,
         foreignKey: 'created_by',
         otherKey: 'recipe_id',
@@ -188,7 +188,7 @@ module.exports.initRelations = () => {
     });
 
     User.belongsToMany(Ingredient, {
-        as: 'IngredientListIngredients',
+        as: 'IngredientListIngredientsLastUpdatedBy',
         through: IngredientList,
         foreignKey: 'last_updated_by',
         otherKey: 'ingredient_id',
@@ -197,7 +197,7 @@ module.exports.initRelations = () => {
     });
 
     User.belongsToMany(MeasurementType, {
-        as: 'IngredientListMeasurementTypes',
+        as: 'IngredientListMeasurementTypesLastUpdatedBy',
         through: IngredientList,
         foreignKey: 'last_updated_by',
         otherKey: 'measurement_type_id',

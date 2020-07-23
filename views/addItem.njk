@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+{% block content %}
+<form method="post">
+<label>{{nameLabel}}
+    <input type='text' name = "ingredient_name">
+</label>
+<label>Ingredient Type:
+    <select name ="ingredient_type">
+        {%for type in ingredientTypes%}
+        <option value ={{type.ingredientTypeId}}>{{type.ingredientTypeName}}</option>
+        {%endfor%}
+    </select>
+</label>
+<label>Amount on Hand:
+    <input type="number" name="onHand">
+</label>
+<label>Storage Measurement Type:
+    <select name = "measurement_type">
+        {% for measurement in measurementTypes %}
+        <option value={{measurement.measurementTypeId}}>{{measurement.measurementTypeName}}</option>
+        {% endfor %}
+    </select>
+</label>
+<input type = "reset">
+<input type = "submit">
+
+</form>
+{% endblock content %}

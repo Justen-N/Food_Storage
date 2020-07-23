@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <link rel="stlyesheet" href="../public/layout.css"/>
+        <title>{{title}}</title>    
+        {% endblock head %}
+    </head>
+    <body>
+    <header>
+        {% block header %}
+        <nav>
+            <ul>
+                <li><a href="/"></a>Home</li>
+            </ul>
+        </nav>
+        {% endblock header %}
+    </header>
+    <div id="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <footer id="foot">
+
+        {% block footer %}
+            &copy; Justen Neeley 2020
+        {% endblock footer %}
+    </footer>
+    </body>
+</html>
